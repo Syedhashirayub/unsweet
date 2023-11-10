@@ -139,7 +139,7 @@ with open(csv_filename, "w", newline="", encoding="utf-8") as csv_file:
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "a.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal")))
         
         list_soup = BeautifulSoup(driver.page_source, "html.parser")
-        product_links = list_soup.select('a.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')[:5]
+        product_links = list_soup.select('a.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')
         
         for link in product_links:
             product_url = base_url + link['href']
